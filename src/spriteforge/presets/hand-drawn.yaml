@@ -1,0 +1,37 @@
+# Preset: hand-drawn — soft storybook / painterly look, textured edges, warm palette.
+# `sprite init --style hand-drawn` copies this to config/style.yaml. Then set
+# master.subject and mint the master:
+#   sprite style --candidates 4   ->   sprite style --accept N
+
+style:
+  name: "Hand Drawn"
+  summary: >-
+    soft hand-drawn storybook look, gently textured shapes, organic slightly
+    uneven outlines, painterly fills.
+  line_weight: "soft hand-inked outline, slightly varying weight, dark warm brown not pure black"
+  shading: "soft painterly shading with gentle gradients and a warm ambient fill"
+  lighting: "soft diffuse light from the top-left, gentle soft shadow"
+  detail: "medium, with a little hand-made texture; still readable as a clean sprite"
+  mood: "warm, cozy, whimsical, storybook"
+
+palette:
+  ink: "#3A2E2A"
+  primary: "#7FB069"
+  secondary: "#E6A157"
+  accent: "#F2D492"
+  highlight: "#FFF7EC"
+  neutral_light: "#E8DCC8"
+  neutral_shadow: "#A08C74"
+
+params:
+  model: "gpt-image-2-2026-04-21"
+  gen_size: "1024x1024"
+  key_color: "#FF00FF"
+  iterate_quality: "low"
+  final_quality: "high"
+
+master:
+  reference_image: "config/style_master.png"
+  subject: >-
+    REPLACE ME: a representative subject (often the player character or a hero
+    object) that best demonstrates this hand-drawn look.

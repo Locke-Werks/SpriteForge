@@ -1,0 +1,51 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "spriteforge"
+version = "0.1.0"
+description = "Game-agnostic CLI that generates, normalizes, and metadata-strips Unity 2D sprites via OpenAI gpt-image-2 — built for Claude Code to drive."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "GPL-3.0-only" }
+authors = [{ name = "lockewerks" }]
+classifiers = [
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Environment :: Console",
+    "Programming Language :: Python :: 3",
+    "Topic :: Multimedia :: Graphics",
+]
+dependencies = [
+    "openai>=1.50",
+    "python-dotenv>=1.0",
+    "pillow>=10.4",
+    "numpy>=2.1",
+    "pyyaml>=6.0",
+    "typer>=0.12",
+    "tenacity>=8.2",
+]
+
+[project.optional-dependencies]
+# Background removal stack — heavy (onnxruntime, opencv). Installed when you need rembg.
+bg = [
+    "opencv-python>=4.9",
+    "rembg>=2.0",
+    "onnxruntime>=1.17",
+]
+dev = [
+    "pytest>=8.0",
+]
+
+[project.scripts]
+sprite = "spriteforge.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/lockewerks/SpriteForge"
+Source = "https://github.com/lockewerks/SpriteForge"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/spriteforge"]
+# Bundled scaffolding templates and style presets are non-.py data living inside
+# the package; hatchling ships package-dir files in the wheel. (Editable installs
+# read them straight from disk via importlib.resources.)

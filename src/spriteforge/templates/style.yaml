@@ -1,0 +1,44 @@
+# SpriteForge — style definition (EDIT THIS).
+# Every sprite is generated against ONE locked master reference image; this file
+# defines the look and drives the master prompt. The agent (or you) should:
+#   1. Fill in `style`, `palette`, and `master.subject` for THIS game's look.
+#   2. Draft candidates:        sprite style --candidates 4
+#   3. Look at out/raw/style_candidate_*.png, pick the best, then lock it:
+#        sprite style --accept N            (writes config/style_master.png)
+# Prefer a ready-made look? Start from a preset:  sprite init --style flat-vector
+
+style:
+  name: "Untitled style"                 # appears in the handoff manifest
+  summary: >-
+    REPLACE ME: one or two sentences describing the overall look — e.g.
+    "clean flat vector shapes, medium detail, friendly readable silhouettes".
+  line_weight: "medium outline in a darkened local color, not pure black, consistent weight"
+  shading: "soft cel shading: one mid fill, one soft shadow, one soft highlight per surface"
+  lighting: "soft key light from the top-left, no cast or ground shadows"
+  detail: "medium, clean readable silhouettes that hold up at small sizes"
+  mood: "REPLACE ME: the emotional tone, e.g. bright and friendly / dark and gritty"
+
+# Color roles are free-form: name them whatever fits the game. Every value is
+# fed to the model as an allowed color. Keep at least a `primary` role.
+palette:
+  ink: "#22252B"            # outlines + darkest shadow
+  primary: "#4C8FBF"        # main hue
+  secondary: "#E08A4B"      # supporting hue
+  accent: "#F3C44B"         # highlights / energy / call-outs
+  highlight: "#FBF4E4"      # warm off-white
+  neutral_light: "#E6E3DA"  # light bodies / surfaces
+  neutral_shadow: "#8A8FA0" # surface undersides
+
+params:
+  model: "gpt-image-2-2026-04-21"
+  gen_size: "1024x1024"
+  key_color: "#FF00FF"      # flat background, keyed out in post
+  iterate_quality: "low"    # draft cheap; finals via `sprite build --quality high`
+  final_quality: "high"
+
+master:
+  reference_image: "config/style_master.png"  # locked master, minted by `sprite style`
+  subject: >-
+    REPLACE ME: one representative subject that best shows the style — often the
+    player character or a hero object. Describe it concretely (form, colors,
+    view). Every other asset is generated to match the master made from this.

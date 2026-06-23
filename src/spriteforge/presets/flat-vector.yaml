@@ -1,0 +1,37 @@
+# Preset: flat-vector — clean vector shapes, cel shading, bold readable silhouettes.
+# `sprite init --style flat-vector` copies this to config/style.yaml. Then set
+# master.subject and mint the master:
+#   sprite style --candidates 4   ->   sprite style --accept N
+
+style:
+  name: "Flat Vector"
+  summary: >-
+    clean flat vector shapes, medium-low detail, bold friendly silhouettes that
+    stay readable at small sizes.
+  line_weight: "medium-bold outline in a darkened local color, not pure black, consistent weight"
+  shading: "soft cel shading with one mid fill, one soft shadow, and one soft highlight per surface"
+  lighting: "soft key light from the top-left, no cast or ground shadows"
+  detail: "medium-low, clean readable silhouettes"
+  mood: "bright, friendly, energetic"
+
+palette:
+  ink: "#20203A"
+  primary: "#46B1E1"
+  secondary: "#FF7A45"
+  accent: "#FFC83D"
+  highlight: "#FFF6E0"
+  neutral_light: "#E7E3D6"
+  neutral_shadow: "#8C90B0"
+
+params:
+  model: "gpt-image-2-2026-04-21"
+  gen_size: "1024x1024"
+  key_color: "#FF00FF"
+  iterate_quality: "low"
+  final_quality: "high"
+
+master:
+  reference_image: "config/style_master.png"
+  subject: >-
+    REPLACE ME: a representative subject (often the player character or a hero
+    object), shown front-on, that best demonstrates this flat-vector look.

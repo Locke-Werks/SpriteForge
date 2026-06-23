@@ -1,0 +1,38 @@
+# Preset: pixel-art — crisp low-res pixel aesthetic, limited palette, no anti-aliasing.
+# `sprite init --style pixel-art` copies this to config/style.yaml AND sets
+# defaults.resample: nearest in config/assets.yaml so downscales stay crisp.
+# Then set master.subject and mint the master:
+#   sprite style --candidates 4   ->   sprite style --accept N
+
+style:
+  name: "Pixel Art"
+  summary: >-
+    crisp pixel-art sprites, limited palette, clean hard edges, no anti-aliasing,
+    chunky readable forms.
+  line_weight: "1px dark outline where it reads clearly, otherwise shape-defined edges"
+  shading: "flat color blocks with simple banded shadow and highlight; dithering only if needed"
+  lighting: "implied top-left light, no soft gradients"
+  detail: "low, deliberate per-pixel placement, no blur"
+  mood: "retro, charming, arcade"
+
+palette:
+  ink: "#1A1C2C"
+  primary: "#41A6F6"
+  secondary: "#EF7D57"
+  accent: "#FFCD75"
+  highlight: "#F4F4F4"
+  neutral_light: "#94B0C2"
+  neutral_shadow: "#566C86"
+
+params:
+  model: "gpt-image-2-2026-04-21"
+  gen_size: "1024x1024"
+  key_color: "#FF00FF"
+  iterate_quality: "low"
+  final_quality: "high"
+
+master:
+  reference_image: "config/style_master.png"
+  subject: >-
+    REPLACE ME: a representative subject (often the player character) drawn as a
+    clean pixel-art sprite that best demonstrates this look.

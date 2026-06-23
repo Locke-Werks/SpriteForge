@@ -1,0 +1,56 @@
+# SpriteForge — asset manifest (EDIT THIS).
+# `sprite gen` / `sprite build` reads this, checks the cache, and generates each
+# asset via the edit endpoint anchored to config/style_master.png. Add assets
+# freely — only new or changed entries cost anything to (re)build.
+
+defaults:
+  size: "1024x1024"            # generation size; downscaled to class variants in post
+  quality: "low"               # iterate at low; finals via `sprite build --quality high`
+  key_color: "#FF00FF"         # flat background, keyed out in post
+  background_method: "chroma"  # chroma | rembg
+  resample: "lanczos"          # lanczos (smooth art) | nearest (pixel art)
+
+# Asset classes define the mechanical output — final canvas, world anchor, and
+# the downscale variants the game needs. These are generic, genre-neutral
+# defaults; rename or retune them freely. Anchor `bottom-center` makes a sprite
+# sit on its feet/base in world space; `center` centers it on the canvas.
+classes:
+  character:
+    canvas: 512
+    anchor: bottom-center
+    variants: [256, 128]
+  prop:
+    canvas: 512
+    anchor: bottom-center      # grounded environment objects
+    variants: [256]
+  item:
+    canvas: 256
+    anchor: center             # pickups / collectibles
+    variants: [128, 64]
+  ui:
+    canvas: 256
+    anchor: center             # icons / buttons
+    variants: [128, 64]
+  fx:
+    canvas: 256
+    anchor: center             # effect sprites
+    variants: [128]
+  background:
+    canvas: 1024
+    anchor: center             # large backdrop elements
+    variants: [512]
+  tile:
+    canvas: 256
+    anchor: center             # single terrain/block sprite (NOT seamless tiling)
+    variants: [128]
+
+# Example assets — replace these with your own (name, class, one-line prompt).
+# `name` is lower_snake_case, conventionally prefixed with its class.
+assets:
+  - name: character_hero
+    class: character
+    prompt: "REPLACE ME: the player character, full body, facing front"
+
+  - name: item_coin
+    class: item
+    prompt: "REPLACE ME: a simple round collectible coin viewed face-on"
