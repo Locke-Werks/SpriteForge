@@ -1,9 +1,17 @@
-# 🔨 SpriteForge
+<div align="center">
 
-**Coherent Unity 2D sprite sets from a text prompt — because you have a game to ship and the art budget of a damp napkin.**
+<img src="assets/spriteforge.ico" width="96" alt="SpriteForge">
 
-![License: GPLv3](https://img.shields.io/badge/License-GPLv3-blue.svg)
-![Python](https://img.shields.io/badge/python-3.11%2B-blue.svg)
+# SpriteForge
+
+**Coherent Unity 2D sprite sets from a text prompt, on the art budget of a damp napkin.**
+
+[![license](https://img.shields.io/badge/license-GPLv3-d6262a?style=flat-square)](LICENSE)
+![platform](https://img.shields.io/badge/platform-Python%203.11%2B-d6262a?style=flat-square)
+
+</div>
+
+---
 
 Ask an image model for "a coin" twelve times and you get twelve coins from twelve
 different universes. SpriteForge exists so that doesn't happen. You lock in *one*
